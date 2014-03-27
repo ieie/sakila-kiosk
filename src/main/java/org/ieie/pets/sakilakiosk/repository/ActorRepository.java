@@ -1,8 +1,8 @@
-package org.ieie.pets.sakilakiosk.jpa.repository;
+package org.ieie.pets.sakilakiosk.repository;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.ieie.pets.sakilakiosk.jpa.model.Actor;
+import org.ieie.pets.sakilakiosk.model.Actor;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.ejb.Stateless;

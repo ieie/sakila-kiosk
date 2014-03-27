@@ -1,7 +1,7 @@
 import org.hibernate.Session;
-import org.ieie.pets.sakilakiosk.jpa.HibernateUtilities;
-import org.ieie.pets.sakilakiosk.jpa.model.Actor;
-import org.ieie.pets.sakilakiosk.jpa.repository.ActorRepository;
+import org.ieie.pets.sakilakiosk.repository.HibernateUtilities;
+import org.ieie.pets.sakilakiosk.model.Actor;
+import org.ieie.pets.sakilakiosk.repository.ActorRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;

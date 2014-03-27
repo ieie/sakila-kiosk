@@ -1,18 +1,18 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 
 /**
- * Created by ievgenii on 3/10/14.
+ * Created by ievgenii on 23.03.14.
  */
-@Entity
-public class Language extends BaseEntity {
+@Entity @Table(name = "category")
+public class Category extends BaseEntity {
 
-    @Id@GeneratedValue(strategy = GenerationType.TABLE)
-    @Column(name = "language_id")
+    @Id @Column(name = "category_id")
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
-    @Column(length = 20)
+    @Column(length = 25)
     private String name;
 
     @Override

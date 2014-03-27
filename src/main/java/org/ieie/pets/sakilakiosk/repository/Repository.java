@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.repository;
+package org.ieie.pets.sakilakiosk.repository;
 
 import java.util.Collection;
 

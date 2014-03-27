@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa;
+package org.ieie.pets.sakilakiosk.repository;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;

@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,8 +24,8 @@ public class Staff extends BaseEntity {
     @ManyToOne
     private Address address;
 
-    //TODO Investigate LONGBLOB mapping
-    private String picture;
+    @Lob
+    private byte[] picture;
 
     @Column(length = 50)
     private String email;
@@ -74,11 +74,11 @@ public class Staff extends BaseEntity {
         this.address = address;
     }
 
-    public String getPicture() {
+    public byte[] getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(byte[] picture) {
         this.picture = picture;
     }
 

@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,10 +17,10 @@ public class City extends BaseEntity {
     @Column(length = 50)
     private String city;
 
-    @ManyToOne @Column(name = "country_id")
+    @ManyToOne @JoinColumn(name = "country_id")
     private Country country;
 
-    @OneToMany
+    @OneToMany(mappedBy = "city")
     private List<Address> addresses;
 
     @Override

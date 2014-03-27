@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 import java.util.Date;

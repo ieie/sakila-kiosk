@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 
@@ -23,7 +23,7 @@ public class Address extends BaseEntity{
     private String district;
 
     @ManyToOne
-//    @Column(name = "city_id")
+    @JoinColumn(name = "city_id")
     private City city;
 
     @Column(name = "postal_code", length = 10)

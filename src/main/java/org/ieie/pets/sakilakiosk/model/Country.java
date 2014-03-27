@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.jpa.model;
+package org.ieie.pets.sakilakiosk.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,7 +17,7 @@ public class Country extends BaseEntity {
     @Column(length = 50)
     private String country;
 
-    @OneToMany
+    @OneToMany(mappedBy = "country")
     private List<City> cities;
 
     public long getId() {

@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <mapping package="org.ieie.pets.sakilakiosk.jpa.model" />
-        <mapping class="org.ieie.pets.sakilakiosk.jpa.model.Actor"/>
+        <mapping package="org.ieie.pets.sakilakiosk.model" />
+        <mapping class="org.ieie.pets.sakilakiosk.model.Actor"/>
     </session-factory>
 </hibernate-configuration>
