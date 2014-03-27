@@ -4,7 +4,7 @@
         version="2.0">
 
     <persistence-unit name="ActorService" transaction-type="RESOURCE_LOCAL">
-        <class>org.ieie.plays.sakilaplay.jpa.model.Actor</class>
+        <class>org.ieie.pets.sakilakiosk.jpa.model.Actor</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sakila"/>

@@ -1,6 +1,5 @@
-package org.ieie.plays.sakilaplay.jpa.model;
+package org.ieie.pets.sakilakiosk.jpa.model;
 
-import java.util.Date;
 import javax.persistence.*;
 
 /**

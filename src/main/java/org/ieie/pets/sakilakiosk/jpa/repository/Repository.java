@@ -1,6 +1,5 @@
-package org.ieie.plays.sakilaplay.jpa.repository;
+package org.ieie.pets.sakilakiosk.jpa.repository;
 
-import java.math.BigInteger;
 import java.util.Collection;
 
 /**

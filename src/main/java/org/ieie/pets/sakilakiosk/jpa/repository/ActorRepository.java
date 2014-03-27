@@ -1,16 +1,14 @@
-package org.ieie.plays.sakilaplay.jpa.repository;
+package org.ieie.pets.sakilakiosk.jpa.repository;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.ieie.plays.sakilaplay.jpa.model.Actor;
+import org.ieie.pets.sakilakiosk.jpa.model.Actor;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.Collections;
 import java.util.List;
 
 /**

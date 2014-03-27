@@ -1,4 +1,4 @@
-package org.ieie.plays.sakilaplay.jpa.repository;
+package org.ieie.pets.sakilakiosk.jpa.repository;
 
 /**
  * Created by ievgenii on 23.03.14.

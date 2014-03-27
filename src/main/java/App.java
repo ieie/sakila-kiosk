@@ -1,9 +1,7 @@
-import org.hibernate.Query;
 import org.hibernate.Session;
-import org.ieie.plays.sakilaplay.jpa.HibernateUtilities;
-import org.ieie.plays.sakilaplay.jpa.model.Actor;
-import org.ieie.plays.sakilaplay.jpa.repository.ActorRepository;
-import org.ieie.plays.sakilaplay.jpa.repository.Repository;
+import org.ieie.pets.sakilakiosk.jpa.HibernateUtilities;
+import org.ieie.pets.sakilakiosk.jpa.model.Actor;
+import org.ieie.pets.sakilakiosk.jpa.repository.ActorRepository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
