@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.repository;
+package org.ieie.sakilakiosk.repository;
 
 /**
  * Created by ievgenii on 23.03.14.

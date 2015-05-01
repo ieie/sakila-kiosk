@@ -1,14 +1,15 @@
-package org.ieie.pets.sakilakiosk.model;
+package org.ieie.sakilakiosk.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by ievgenii on 23.03.14.
  */
-@Entity@Table(name = "film")
-public class Film extends BaseEntity {
+@Entity@Table(name = "film")@Embeddable
+public class Film extends BaseEntity implements Serializable {
 
     @Id @Column(name = "film_id")
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -55,9 +56,9 @@ public class Film extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categories;
 
-    @OneToMany@JoinTable(name = "film_text",
-            joinColumns = @JoinColumn(name = "film_id"))
-    private List<Review> reviews;
+//    @OneToMany@JoinTable(name = "film_text",
+//            joinColumns = @JoinColumn(name = "film_id"))
+//    private List<Review> reviews;
 
     @Override
     public long getId() {

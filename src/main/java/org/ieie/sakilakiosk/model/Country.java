@@ -1,4 +1,4 @@
-package org.ieie.pets.sakilakiosk.model;
+package org.ieie.sakilakiosk.model;
 
 import javax.persistence.*;
 import java.util.List;
