@@ -1,5 +1,8 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,6 +14,7 @@ public abstract class BaseEntity {
 
     @Column(name = "last_update")
     @Temporal(TemporalType.TIMESTAMP)
+    @Getter@Setter
     private Date lastUpdate;
 
     public abstract long getId();
@@ -32,11 +36,4 @@ public abstract class BaseEntity {
         return (int)(getId() * 123 + lastUpdate.hashCode() * 123);
     }
 
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
 }

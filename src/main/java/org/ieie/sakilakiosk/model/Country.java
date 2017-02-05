@@ -1,5 +1,9 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,6 +12,9 @@ import java.util.List;
  */
 
 @Entity
+@Getter
+@Setter
+@ToString
 public class Country extends BaseEntity {
 
     @Id
@@ -19,28 +26,4 @@ public class Country extends BaseEntity {
 
     @OneToMany(mappedBy = "country")
     private List<City> cities;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public List<City> getCities() {
-        return cities;
-    }
-
-    public void setCities(List<City> cities) {
-        this.cities = cities;
-    }
 }

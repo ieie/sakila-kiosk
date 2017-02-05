@@ -1,5 +1,9 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,51 +12,23 @@ import java.util.List;
  */
 @Entity
 @Table(name = "city")
+@Getter
+@Setter
+@ToString
 public class City extends BaseEntity {
 
-    @Id @GeneratedValue(strategy = GenerationType.TABLE)
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "city_id")
     private long id;
 
     @Column(length = 50)
     private String city;
 
-    @ManyToOne @JoinColumn(name = "country_id")
+    @ManyToOne
+    @JoinColumn(name = "country_id")
     private Country country;
 
     @OneToMany(mappedBy = "city")
     private List<Address> addresses;
-
-    @Override
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public void setCountry(Country country) {
-        this.country = country;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
 }

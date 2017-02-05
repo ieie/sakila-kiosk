@@ -1,5 +1,7 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
 /**
@@ -7,9 +9,14 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "actor")
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@Builder
 public class Actor extends BaseEntity{
 
-    @Id @GeneratedValue(strategy = GenerationType.TABLE)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "actor_id")
     private long id;
 
@@ -19,34 +26,8 @@ public class Actor extends BaseEntity{
     @Column(name = "last_name", length = 45)
     private String lastName;
 
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Override
-    public String toString() {
-        return "Actor { " + firstName + " " + lastName + " :: " + getLastUpdate() + '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Actor { " + firstName + " " + lastName + " :: " + getLastUpdate() + '}';
+//    }
 }
