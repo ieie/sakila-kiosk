@@ -1,30 +1,45 @@
-package org.ieie.sakilakiosk.model;
+package org.ieie.sakilakiosk.domain.address;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ievgenii on 3/10/14.
  */
-//@Entity
-public abstract class BaseEntity {
+
+@Entity
+@Getter
+@Setter
+@ToString
+@Builder
+public class Country  {
+
+    @Id
+    @Column(name = "country_id")
+    private long id;
+
+    @Column(length = 50)
+    private String country;
+
+    @OneToMany(mappedBy = "country")
+    private List<City> cities;
 
     @Column(name = "last_update")
     @Temporal(TemporalType.TIMESTAMP)
-    @Getter@Setter
     private Date lastUpdate;
-
-    public abstract long getId();
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BaseEntity)) return false;
+        if (!(o instanceof Country)) return false;
 
-        BaseEntity that = (BaseEntity) o;
+        Country that = (Country) o;
 
         if (!lastUpdate.equals(that.lastUpdate) || getId() != that.getId()) return false;
 
@@ -35,5 +50,4 @@ public abstract class BaseEntity {
     public int hashCode() {
         return (int)(getId() * 123 + lastUpdate.hashCode() * 123);
     }
-
 }
