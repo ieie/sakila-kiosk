@@ -1,8 +1,7 @@
-package org.ieie.sakilakiosk.model;
+package org.ieie.sakilakiosk.domain.film;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import org.ieie.sakilakiosk.domain.actor.Actor;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +17,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Film extends BaseEntity implements Serializable {
+@Builder
+public class Film implements Serializable {
+
+
 
     @Id
     @Column(name = "film_id")
@@ -70,7 +72,11 @@ public class Film extends BaseEntity implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categories;
 
-//    @OneToMany@JoinTable(name = "film_text",
+    @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
+
+    //    @OneToMany@JoinTable(name = "film_text",
 //            joinColumns = @JoinColumn(name = "film_id"))
 //    private List<Review> reviews;
 }

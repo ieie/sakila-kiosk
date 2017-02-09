@@ -1,10 +1,13 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.ieie.sakilakiosk.domain.address.Address;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,7 +20,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Staff extends BaseEntity {
+@Builder
+public class Staff  {
 
     @Id
     @Column(name = "staff_id")
@@ -49,4 +53,25 @@ public class Staff extends BaseEntity {
 
     @Column(length = 40)
     private String password;
+
+    @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Staff)) return false;
+
+        Staff that = (Staff) o;
+
+        if (!lastUpdate.equals(that.lastUpdate) || getId() != that.getId()) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int)(getId() * 123 + lastUpdate.hashCode() * 123);
+    }
 }

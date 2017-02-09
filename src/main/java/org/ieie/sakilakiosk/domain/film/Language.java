@@ -1,25 +1,30 @@
-package org.ieie.sakilakiosk.model;
+package org.ieie.sakilakiosk.domain.film;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by ievgenii on 23.03.14.
+ * Created by ievgenii on 3/10/14.
  */
 @Entity
-@Table(name = "customer")
 @Getter
 @Setter
 @ToString
 @Builder
-public class Customer  {
+public class Language  {
 
     @Id
-    @Column(name = "customer_id")
     @GeneratedValue(strategy = GenerationType.TABLE)
+    @Column(name = "language_id")
     private long id;
+
+    @Column(length = 20)
+    private String name;
 
     @Column(name = "last_update")
     @Temporal(TemporalType.TIMESTAMP)
@@ -28,9 +33,9 @@ public class Customer  {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
+        if (!(o instanceof Language)) return false;
 
-        Customer that = (Customer) o;
+        Language that = (Language) o;
 
         if (!lastUpdate.equals(that.lastUpdate) || getId() != that.getId()) return false;
 
@@ -41,6 +46,4 @@ public class Customer  {
     public int hashCode() {
         return (int)(getId() * 123 + lastUpdate.hashCode() * 123);
     }
-
-    //TODO Implement
 }

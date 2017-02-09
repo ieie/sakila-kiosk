@@ -64,7 +64,7 @@ CREATE TABLE category (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Table structure for table `city`
+-- Table structure for table `address`
 --
 
 CREATE TABLE city (

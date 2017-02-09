@@ -1,5 +1,6 @@
 package org.ieie.sakilakiosk.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,7 +16,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Rental extends BaseEntity {
+@Builder
+public class Rental  {
     @Id
     @Column(name = "rental_id")
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -37,4 +39,24 @@ public class Rental extends BaseEntity {
 
     @ManyToOne
     private Staff staff;
+    @Column(name = "last_update")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdate;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Rental)) return false;
+
+        Rental that = (Rental) o;
+
+        if (!lastUpdate.equals(that.lastUpdate) || getId() != that.getId()) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int)(getId() * 123 + lastUpdate.hashCode() * 123);
+    }
 }
