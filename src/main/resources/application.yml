@@ -1,5 +1,5 @@
 spring:
-  conf
+
   application:
     name: sakilakiosk
 
@@ -18,7 +18,8 @@ spring:
     generate-ddl: true
 
 logging:
-  config: log4j2.xml
+
+  config: classpath:log4j2.xml
 
 ---
 spring:

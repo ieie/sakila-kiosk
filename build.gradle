@@ -19,14 +19,17 @@ repositories {
 dependencies {
 
     compile 'mysql:mysql-connector-java:5.1.34'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
-    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+//    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+//    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
 
     compile "io.vertx:vertx-core:$vertxVersion"
     compile "com.zaxxer:HikariCP:2.5.1"
     compile "dom4j:dom4j:1.6.+"
 
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:$bootVersion"
+    compile( "org.springframework.boot:spring-boot-starter-data-jpa:$bootVersion") {
+        exclude group:"org.springframework.boot", module:"spring-boot-starter-logging"
+    }
+    compile "org.springframework.boot:spring-boot-starter-log4j2:$bootVersion"
 
     compile "org.projectlombok:lombok:1.16.+"
 
